@@ -13,22 +13,31 @@ import java.io.IOException;
 import org.apache.log4j.Appender;
 import org.apache.log4j.ConsoleAppender;
 public class Demo {
-
+        
+	// Logger 
 	static Logger log=Logger.getLogger(Demo.class.getName());
 	
+	// Main method
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 		
+        // Layout		
         Layout l=new PatternLayout();
         
+	// Appender
         Appender ap=new FileAppender(l,"abc.txt");
         
+	// Add appender	
         log.addAppender(ap);
         
+	// Debug	
         log.debug("DEBUG");
+	// Info	
         log.info("INFO");
+	// Warn	
         log.warn("WARN");
+	// Error	
         log.error("ERROR");
+	// Fatal	
         log.fatal("FATAL");
 	}
 }
